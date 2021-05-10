@@ -1,0 +1,27 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package ds.stock.trading.system.grpc.generated;
+
+message StockOrderRequest {
+    string stockId = 1;
+    string stockSymbol = 2;
+    int32 stockQuantity=3;
+    double stockPrice=4;
+    bool isSentByPrimary=5;
+    string stockType=6;
+
+    //string traderId = 1;
+
+}
+
+message StockOrderResponse {
+    string stockId = 1;
+    string stockSymbol = 2;
+    int32 stockQuantity=3;
+    double stockPrice=4;
+    string stockType=5;
+}
+
+service StockOrderService {
+    rpc stockOrder(StockOrderRequest) returns (StockOrderResponse);
+}
