@@ -9,6 +9,7 @@ message StockOrderRequest {
     double stockPrice=4;
     bool isSentByPrimary=5;
     string stockType=6;
+    string stockTraderId=7;
 
     //string traderId = 1;
 
@@ -20,6 +21,8 @@ message StockOrderResponse {
     int32 stockQuantity=3;
     double stockPrice=4;
     string stockType=5;
+    string stockTraderId=6;
+    bool status = 7;
 }
 
 service StockOrderService {
